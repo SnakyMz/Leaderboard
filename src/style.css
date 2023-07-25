@@ -1,106 +1,106 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-family: monospace;
-    font-size: 1.2rem;
+  font-family: monospace;
+  font-size: 1.2rem;
 }
 
 h1 {
-    margin: 3% 0 0 3%;
+  margin: 3% 0 0 3%;
 }
 
 #scores {
-    padding: 10%;
+  padding: 10%;
 }
 
 .scoreboardHead {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1.5rem;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .btn {
-    background-color: white;
-    border: 0.2rem solid black;
-    box-shadow: 0.2rem 0.2rem 0 black;
-    font-weight: 600;
-    padding: 0.2rem 0.6rem;
-    font-size: 1.1rem;
+  background-color: white;
+  border: 0.2rem solid black;
+  box-shadow: 0.2rem 0.2rem 0 black;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  font-size: 1.1rem;
 }
 
 .btn:hover {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 .scoreboard {
-    border: 0.3rem solid black;
+  border: 0.3rem solid black;
 }
 
 .scoreboard li {
-    list-style: none;
-    padding: 0.2rem 0.5rem;
+  list-style: none;
+  padding: 0.2rem 0.5rem;
 }
 
 .scoreboard li:nth-child(even) {
-    background-color: lightgrey;
+  background-color: lightgrey;
 }
 
 #scoreAdder {
-    padding: 0 10% 5% 10%;
+  padding: 0 10% 5% 10%;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 1.5rem;
 }
 
 .playerInput {
-    margin-bottom: 1.5rem;
-    padding: 0.3rem 0.6rem;
-    font-size: 1.1rem;
-    width: 100%;
-    border: 0.3rem solid black;
+  margin-bottom: 1.5rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.1rem;
+  width: 100%;
+  border: 0.3rem solid black;
 }
 
 .submitBtn {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 @media screen and (min-width: 768px) {
-    body {
-        font-size: 1.8rem;
-    }
+  body {
+    font-size: 1.8rem;
+  }
 
-    main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 0 3%;
-    }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 3%;
+  }
 
-    .btn {
-        font-size: 1.3rem;
-    }
+  .btn {
+    font-size: 1.3rem;
+  }
 
-    .scoreboard li {
-        padding: 0.3rem 1rem;
-        font-size: 1.5rem;
-    }
+  .scoreboard li {
+    padding: 0.3rem 1rem;
+    font-size: 1.5rem;
+  }
 
-    #scoreAdder {
-        padding: 10% 20% 10% 10%;
-    }
+  #scoreAdder {
+    padding: 10% 20% 10% 10%;
+  }
 
-    .playerInput {
-        font-size: 1.4rem;
-        padding: 0.5rem 0.7rem;
-    }
+  .playerInput {
+    font-size: 1.4rem;
+    padding: 0.5rem 0.7rem;
+  }
 }

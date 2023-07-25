@@ -9,11 +9,11 @@ const playerScore = document.querySelector('.playerScore');
 const refreshBtn = document.querySelector('.refreshBtn');
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    scores.addScore(playerName.value, playerScore.value);
-    form.reset();
+  event.preventDefault();
+  scores.addScore(playerName.value, playerScore.value);
+  form.reset();
 });
 
 refreshBtn.onclick = () => {
-    scores.displayScore();
-}
+  scores.displayScore();
+};
