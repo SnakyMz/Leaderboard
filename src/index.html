@@ -8,7 +8,32 @@
 </head>
 
 <body>
+    <header>
+        <h1>Leaderboard</h1>
+    </header>
 
+    <main>
+        <!--Scoreboard section-->
+        <section id="scores">
+            <div class="scoreboardHead">
+                <h2>Recent Scores</h2>
+                <button type="button" class="refreshBtn btn">Refresh</button>
+            </div>
+            <div class="scoreboard">
+                <!--Scores created dynamically-->
+            </div>
+        </section>
+
+        <!--Section to add new scores-->
+        <section id="scoreAdder">
+            <h2>Add your score</h2>
+            <input type="text" class="addScore playerName" placeholder="Your name">
+            <br>
+            <input type="text" class="addScore playerScore" placeholder="Your score">
+            <br>
+            <button type="submit" class="submitBtn btn">submit</button>
+        </section>
+    </main>
 </body>
 
 </html>
