@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_scores_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scores.js */ \"./src/modules/scores.js\");\n\r\n\r\n\r\nconst scores = new _modules_scores_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\r\n\r\nconst form = document.querySelector('form');\r\nconst playerName = document.querySelector('.playerName');\r\nconst playerScore = document.querySelector('.playerScore');\r\nconst refreshBtn = document.querySelector('.refreshBtn');\r\n\r\nform.addEventListener('submit', (event) => {\r\n    event.preventDefault();\r\n    scores.addScore(playerName.value, playerScore.value);\r\n    form.reset();\r\n});\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/scores.js":
+/*!*******************************!*\
+  !*** ./src/modules/scores.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Scores)\n/* harmony export */ });\nclass Scores {\r\n    constructor() {\r\n        this.array = [];\r\n    }\r\n\r\n    //Adds new score to the array\r\n    addScore = (name, score) => {\r\n        let arrayObject = {};\r\n        arrayObject.name = name;\r\n        arrayObject.score = score;\r\n        this.array.push(arrayObject);\r\n        this.displayScore();\r\n    }\r\n\r\n    //Adds all the scores in the scoreboard from the array\r\n    displayScore = () => {\r\n        const scoreboard = document.querySelector('.scoreboard');\r\n        scoreboard.innerHTML = '';\r\n        this.array.forEach((player) => {\r\n            const li = document.createElement('li');\r\n            li.innerHTML = `\r\n            ${player.name}: ${player.score}\r\n            `;\r\n            scoreboard.appendChild(li);\r\n        });\r\n    }\r\n}\n\n//# sourceURL=webpack://leaderboard/./src/modules/scores.js?");
 
 /***/ })
 

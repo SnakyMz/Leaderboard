@@ -16,22 +16,24 @@
         <!--Scoreboard section-->
         <section id="scores">
             <div class="scoreboardHead">
-                <h2>Recent Scores</h2>
+                <h2>Recent scores</h2>
                 <button type="button" class="refreshBtn btn">Refresh</button>
             </div>
-            <div class="scoreboard">
+            <ul class="scoreboard">
                 <!--Scores created dynamically-->
-            </div>
+            </ul>
         </section>
 
         <!--Section to add new scores-->
         <section id="scoreAdder">
             <h2>Add your score</h2>
-            <input type="text" class="addScore playerName" placeholder="Your name">
-            <br>
-            <input type="text" class="addScore playerScore" placeholder="Your score">
-            <br>
-            <button type="submit" class="submitBtn btn">submit</button>
+            <form action="">
+                <input type="text" class="playerInput playerName" placeholder="Your name">
+                <br>
+                <input type="text" class="playerInput playerScore" placeholder="Your score">
+                <br>
+                <button type="submit" class="submitBtn btn">Submit</button>
+            </form>
         </section>
     </main>
 </body>
