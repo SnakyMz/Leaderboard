@@ -12,6 +12,7 @@ const submitMsg = document.querySelector('#submitMsg');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   scores.addScore(playerName.value, playerScore.value);
+  submitMsg.style.display = 'block';
   form.reset();
 });
 

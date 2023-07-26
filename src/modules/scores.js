@@ -1,5 +1,4 @@
 const api = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/$^@<!/scores/';
-const submitMsg = document.querySelector('#submitMsg');
 
 export default class Scores {
   // Adds new score to the API
@@ -15,29 +14,22 @@ export default class Scores {
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        submitMsg.innerHTML = json.result;
-        submitMsg.style.display = 'block';
-      });
+    });
   }
 
   // Adds all the scores in the scoreboard from the API
   displayScore = async () => {
-    await fetch(api)
-      .then((responce) => responce.json())
-      .then((json) => {
-        const scoreArray = json.result.sort((a, b) => b.score - a.score);
-        const scoreboard = document.querySelector('.scoreboard');
-        scoreboard.innerHTML = '';
-        scoreArray.forEach((player) => {
-          const li = document.createElement('li');
-          li.innerHTML = `
+    const responce = await fetch(api);
+    const arrayData = await responce.json();
+    const scoreArray = arrayData.result.sort((a, b) => b.score - a.score);
+    const scoreboard = document.querySelector('.scoreboard');
+    scoreboard.innerHTML = '';
+    scoreArray.forEach((player) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
             ${player.user}: ${player.score}
             `;
-          scoreboard.appendChild(li);
-        });
-      });
+      scoreboard.appendChild(li);
+    });
   }
 }
