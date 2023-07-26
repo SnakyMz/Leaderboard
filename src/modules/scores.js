@@ -1,27 +1,35 @@
+const api = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/$^@<!/scores/';
+
 export default class Scores {
-  constructor() {
-    this.array = [];
+  // Adds new score to the API
+  addScore = async (name, score) => {
+    await fetch(api, {
+      method: 'POST',
+      body: JSON.stringify({
+        name: "Snaky's game",
+        result: 'Game with ID: $^@<! added.',
+        user: name,
+        score,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
   }
 
-    // Adds new score to the array
-    addScore = (name, score) => {
-      const arrayObject = {};
-      arrayObject.name = name;
-      arrayObject.score = score;
-      this.array.push(arrayObject);
-      this.displayScore();
-    }
-
-    // Adds all the scores in the scoreboard from the array
-    displayScore = () => {
-      const scoreboard = document.querySelector('.scoreboard');
-      scoreboard.innerHTML = '';
-      this.array.forEach((player) => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-            ${player.name}: ${player.score}
+  // Adds all the scores in the scoreboard from the API
+  displayScore = async () => {
+    const responce = await fetch(api);
+    const arrayData = await responce.json();
+    const scoreArray = arrayData.result.sort((a, b) => b.score - a.score);
+    const scoreboard = document.querySelector('.scoreboard');
+    scoreboard.innerHTML = '';
+    scoreArray.forEach((player) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+            ${player.user}: ${player.score}
             `;
-        scoreboard.appendChild(li);
-      });
-    }
+      scoreboard.appendChild(li);
+    });
+  }
 }

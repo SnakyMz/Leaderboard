@@ -7,13 +7,16 @@ const form = document.querySelector('form');
 const playerName = document.querySelector('.playerName');
 const playerScore = document.querySelector('.playerScore');
 const refreshBtn = document.querySelector('.refreshBtn');
+const submitMsg = document.querySelector('#submitMsg');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   scores.addScore(playerName.value, playerScore.value);
+  submitMsg.style.display = 'block';
   form.reset();
 });
 
 refreshBtn.onclick = () => {
   scores.displayScore();
+  submitMsg.style.display = 'none';
 };

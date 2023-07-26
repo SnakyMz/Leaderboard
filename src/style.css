@@ -75,6 +75,13 @@ form {
   align-self: flex-end;
 }
 
+#submitMsg {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 600;
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   body {
     font-size: 1.8rem;
